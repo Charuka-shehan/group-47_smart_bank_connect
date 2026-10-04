@@ -1,0 +1,32 @@
+Member1_Liyanage_Account_Management
+
+== MODULE FILES ==
+src/main/java/com/lankatrust/smartbank/controller/AccountController.java
+src/main/java/com/lankatrust/smartbank/service/AccountService.java
+src/main/java/com/lankatrust/smartbank/service/impl/AccountServiceImpl.java
+src/main/java/com/lankatrust/smartbank/entity/Account.java
+src/main/java/com/lankatrust/smartbank/entity/AccountStatus.java
+src/main/java/com/lankatrust/smartbank/repository/AccountRepository.java
+src/main/java/com/lankatrust/smartbank/service/AtmCardService.java
+src/main/java/com/lankatrust/smartbank/service/impl/AtmCardServiceImpl.java
+src/main/java/com/lankatrust/smartbank/entity/AtmCard.java
+src/main/java/com/lankatrust/smartbank/repository/AtmCardRepository.java
+src/main/java/com/lankatrust/smartbank/dto/AccountDto.java
+src/main/webapp/WEB-INF/views/accounts/open.jsp
+src/main/webapp/WEB-INF/views/accounts/manage.jsp
+src/test/java/com/lankatrust/smartbank/service/AccountServiceTest.java
+src/test/java/com/lankatrust/smartbank/service/AccountPermanentDeleteTest.java
+src/test/java/com/lankatrust/smartbank/service/DemoAtmRemovalTest.java
+
+== SHARED (reference: approval workflow / validation) ==
+src/main/java/com/lankatrust/smartbank/controller/ApprovalController.java
+src/main/java/com/lankatrust/smartbank/service/ApprovalService.java
+src/main/java/com/lankatrust/smartbank/service/impl/ApprovalServiceImpl.java
+src/main/java/com/lankatrust/smartbank/entity/ApprovalRequest.java
+src/main/java/com/lankatrust/smartbank/repository/ApprovalRequestRepository.java
+src/main/java/com/lankatrust/smartbank/service/ValidationService.java
+src/main/java/com/lankatrust/smartbank/service/impl/ValidationServiceImpl.java
+src/main/java/com/lankatrust/smartbank/service/NotificationService.java
+src/main/java/com/lankatrust/smartbank/entity/AuditLog.java
+src/main/java/com/lankatrust/smartbank/service/AuditLogService.java
+src/main/webapp/WEB-INF/views/approvals/list.jsp
