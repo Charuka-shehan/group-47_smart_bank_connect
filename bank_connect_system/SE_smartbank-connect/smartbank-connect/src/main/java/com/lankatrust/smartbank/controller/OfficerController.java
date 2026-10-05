@@ -1,3 +1,4 @@
+
 package com.lankatrust.smartbank.controller;
 
 import com.lankatrust.smartbank.entity.Customer;
@@ -338,3 +339,4 @@ public class OfficerController {
                 .body("There is an update to your loan application.").channel(NotificationChannel.IN_APP).build());
     }
 }
+
