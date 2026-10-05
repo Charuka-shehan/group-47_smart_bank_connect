@@ -1,0 +1,355 @@
+/* ==========================================================================
+   Bankdash Overview — exact visual replica of the bankdash-v1.0.1 template
+   Palette / typography values pulled directly from the template's
+   theme/colors.ts, theme/palette.ts and theme/typography.ts
+   ========================================================================== */
+
+:root {
+    --bd-blue-50: #DFE5EE;
+    --bd-blue-100: #E7EDFF;
+    --bd-blue-200: #8BA3CB;
+    --bd-blue-300: #718EBF;
+    --bd-blue-500: #1814F3;
+    --bd-blue-600: #0A06F4;
+    --bd-blue-700: #4C49ED;
+    --bd-blue-800: #123288;
+    --bd-blue-900: #343C6A;
+
+    --bd-grey-50: #F5F7FA;
+    --bd-grey-100: #F2F4F7;
+    --bd-grey-200: #E6EFF5;
+    --bd-grey-300: #DFEAF2;
+
+    --bd-green-500: #41D4A8;
+    --bd-red-500: #FE5C73;
+    --bd-orange-500: #FC7900;
+    --bd-orange-100: #FEEFE1;
+    --bd-magneta-500: #FA00FF;
+    --bd-magneta-100: #EBEEF2;
+
+    --bd-blue-gradient: linear-gradient(to top right, var(--bd-blue-700) 30%, var(--bd-blue-600));
+    --bd-white-gradient: linear-gradient(to bottom, rgba(255,255,255,.1) 0%, transparent);
+    --bd-white-card-gradient: linear-gradient(to bottom right, rgba(255,255,255,.15) 0%, transparent);
+    --bd-bg-gradient: linear-gradient(to right bottom, #f9fafb, var(--bd-grey-200));
+
+    --bd-radius: 16px;
+    --bd-sidebar-w: 250px;
+}
+
+.bd-root, .bd-root * {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.bd-root {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bd-grey-50);
+    color: var(--bd-blue-900);
+}
+
+/* ---------------------------- Sidebar ---------------------------- */
+.bd-sidebar {
+    width: var(--bd-sidebar-w);
+    flex-shrink: 0;
+    background: #ffffff;
+    padding: 28px 20px;
+    border-right: 1px solid var(--bd-grey-100);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.bd-sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 8px 28px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--bd-blue-900);
+}
+
+.bd-sidebar-logo img { width: 28px; height: 28px; }
+
+.bd-nav { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+
+.bd-nav-item a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    color: var(--bd-blue-300);
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 500;
+    transition: background .15s, color .15s;
+}
+
+.bd-nav-item a i { font-size: 1.05rem; width: 20px; text-align: center; }
+
+.bd-nav-item a:hover { background: var(--bd-blue-100); color: var(--bd-blue-500); }
+
+.bd-nav-item.active a {
+    background: var(--bd-blue-100);
+    color: var(--bd-blue-500);
+    font-weight: 600;
+    border-right: 3px solid var(--bd-blue-500);
+}
+
+/* ---------------------------- Main / Topbar ---------------------------- */
+.bd-main { flex: 1; min-width: 0; padding: 28px 32px 40px; }
+
+.bd-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    gap: 20px;
+}
+
+.bd-topbar h1 { font-size: 1.5rem; font-weight: 600; margin: 0; color: var(--bd-blue-900); }
+
+.bd-topbar-right { display: flex; align-items: center; gap: 18px; }
+
+.bd-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bd-grey-100);
+    border-radius: 40px;
+    padding: 10px 18px;
+    width: 260px;
+    color: var(--bd-blue-300);
+}
+
+.bd-search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: .875rem;
+    width: 100%;
+    color: var(--bd-blue-900);
+}
+
+.bd-icon-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--bd-grey-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bd-blue-900);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.bd-icon-btn .bd-dot {
+    position: absolute;
+    top: 8px;
+    right: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--bd-red-500);
+    border: 2px solid #fff;
+}
+
+.bd-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* ---------------------------- Cards / grid ---------------------------- */
+.bd-card {
+    background: #fff;
+    border-radius: var(--bd-radius);
+    padding: 22px;
+}
+
+.bd-section-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--bd-blue-900);
+    margin: 0 0 16px;
+}
+
+.bd-row-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.bd-row-head .bd-section-title { margin: 0; }
+
+.bd-see-all { color: var(--bd-blue-900); font-weight: 600; font-size: .85rem; text-decoration: none; }
+
+.bd-grid-top {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.bd-grid-2 {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.bd-grid-transfer {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+/* ---------------------------- My Cards ---------------------------- */
+.bd-cards-scroll { display: flex; gap: 24px; overflow-x: auto; padding-bottom: 4px; }
+
+.bd-credit-card {
+    flex: 1 1 340px;
+    min-width: 300px;
+    border-radius: var(--bd-radius);
+    overflow: hidden;
+    border: 1px solid var(--bd-grey-200);
+}
+
+.bd-credit-card.blue { background: var(--bd-blue-gradient); color: #fff; border: none; }
+.bd-credit-card.white { background: #fff; color: var(--bd-blue-900); }
+
+.bd-credit-card-top { padding: 22px 24px 0; display: flex; justify-content: space-between; align-items: flex-start; }
+.bd-credit-card-label { font-size: .7rem; opacity: .85; text-transform: capitalize; margin: 0 0 4px; }
+.bd-credit-card.white .bd-credit-card-label { color: var(--bd-blue-300); opacity: 1; }
+.bd-credit-card-balance { font-size: 1.5rem; font-weight: 600; margin: 0; }
+.bd-credit-card-chip { width: 34px; }
+
+.bd-credit-card-mid { display: flex; gap: 40px; padding: 22px 24px 20px; }
+.bd-credit-card-mid span { display: block; font-size: .7rem; opacity: .85; margin-bottom: 4px; }
+.bd-credit-card.white .bd-credit-card-mid span { color: var(--bd-blue-300); opacity: 1; }
+.bd-credit-card-mid strong { font-size: .95rem; font-weight: 600; }
+
+.bd-credit-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px 20px;
+}
+.bd-credit-card.blue .bd-credit-card-bottom { background: var(--bd-white-gradient); border-top: none; }
+.bd-credit-card.white .bd-credit-card-bottom { background: var(--bd-white-card-gradient); border-top: 1px solid var(--bd-grey-200); }
+.bd-credit-card-number { font-size: 1.05rem; letter-spacing: .5px; }
+.bd-credit-card-bottom img.logo { width: 44px; }
+
+/* ---------------------------- Recent transactions ---------------------------- */
+.bd-tx-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
+.bd-tx-item { display: flex; align-items: center; gap: 16px; }
+.bd-tx-icon { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0; }
+.bd-tx-icon.warning { background: var(--bd-orange-100); color: var(--bd-orange-500); }
+.bd-tx-icon.neutral { background: var(--bd-blue-100); color: var(--bd-blue-500); }
+.bd-tx-icon.success { background: #DCFAF8; color: #16b8a6; }
+.bd-tx-body { flex: 1; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.bd-tx-title { font-size: .9rem; color: var(--bd-blue-800); margin: 0 0 4px; }
+.bd-tx-date { font-size: .78rem; color: var(--bd-blue-300); margin: 0; }
+.bd-tx-amount { font-size: .9rem; font-weight: 500; white-space: nowrap; }
+.bd-tx-amount.pos { color: var(--bd-green-500); }
+.bd-tx-amount.neg { color: var(--bd-red-500); }
+
+/* ---------------------------- Chart card headers ---------------------------- */
+.bd-legend { display: flex; gap: 18px; align-items: center; }
+.bd-legend span { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; color: var(--bd-blue-300); }
+.bd-legend i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+
+.bd-chart-box { position: relative; width: 100%; }
+.bd-chart-box.activity { height: 260px; }
+.bd-chart-box.expense { height: 230px; }
+.bd-chart-box.balance { height: 250px; }
+
+/* ---------------------------- Quick transfer ---------------------------- */
+.bd-transfer-people { display: flex; align-items: center; gap: 20px; overflow-x: auto; padding: 4px 2px 12px; }
+.bd-transfer-person { text-align: center; flex-shrink: 0; width: 74px; }
+.bd-transfer-person img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; margin-bottom: 8px; }
+.bd-transfer-person .name { font-size: .78rem; font-weight: 600; color: var(--bd-blue-900); white-space: nowrap; }
+.bd-transfer-person .role { font-size: .72rem; color: var(--bd-blue-300); }
+
+.bd-send-row { display: flex; align-items: center; gap: 14px; }
+.bd-send-label { font-size: .82rem; color: var(--bd-blue-900); white-space: nowrap; }
+.bd-send-input-wrap { flex: 1; display: flex; align-items: center; background: var(--bd-grey-100); border-radius: 40px; padding: 6px 6px 6px 20px; }
+.bd-send-input-wrap input { border: none; background: transparent; outline: none; flex: 1; font-size: .85rem; color: var(--bd-blue-900); }
+.bd-send-btn { background: var(--bd-blue-900); color: #fff; border: none; border-radius: 40px; padding: 10px 22px; font-size: .82rem; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+
+/* ---------------------------- Invoice table ---------------------------- */
+.bd-tabs { display: flex; gap: 26px; border-bottom: 1px solid var(--bd-grey-100); margin-bottom: 18px; }
+.bd-tab { padding-bottom: 12px; font-size: .85rem; color: var(--bd-blue-300); font-weight: 500; cursor: pointer; border-bottom: 2px solid transparent; }
+.bd-tab.active { color: var(--bd-blue-900); font-weight: 600; border-color: var(--bd-blue-500); }
+
+.bd-table { width: 100%; border-collapse: collapse; }
+.bd-table th {
+    text-align: left;
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--bd-blue-900);
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--bd-grey-100);
+}
+.bd-table td { padding: 14px 10px; font-size: .85rem; color: var(--bd-blue-900); border-bottom: 1px solid var(--bd-grey-100); vertical-align: middle; }
+.bd-table tr:last-child td { border-bottom: none; }
+
+.bd-tx-cell { display: flex; align-items: center; gap: 12px; }
+.bd-tx-cell .bd-mini-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--bd-grey-100); display: flex; align-items: center; justify-content: center; color: var(--bd-blue-300); font-size: .85rem; }
+
+.bd-amount.pos { color: var(--bd-green-500); }
+.bd-amount.neg { color: var(--bd-red-500); }
+
+.bd-download-btn {
+    border: 1px solid var(--bd-grey-300);
+    background: #fff;
+    border-radius: 40px;
+    padding: 7px 18px;
+    font-size: .78rem;
+    color: var(--bd-blue-900);
+    cursor: pointer;
+}
+
+.bd-pagination { display: flex; justify-content: flex-end; align-items: center; gap: 6px; margin-top: 18px; }
+.bd-page-item {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    color: var(--bd-blue-300);
+    cursor: pointer;
+}
+.bd-page-item.active { background: var(--bd-blue-500); color: #fff; font-weight: 600; }
+.bd-page-nav { font-size: .8rem; color: var(--bd-blue-300); padding: 0 8px; cursor: pointer; }
+
+/* ---------------------------- Footer ---------------------------- */
+.bd-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--bd-grey-100);
+    font-size: .8rem;
+    color: var(--bd-blue-300);
+}
+.bd-footer a { color: var(--bd-blue-300); text-decoration: none; margin-left: 20px; }
+
+@media (max-width: 1200px) {
+    .bd-grid-top, .bd-grid-2, .bd-grid-transfer { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+    .bd-sidebar { display: none; }
+}
